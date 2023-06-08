@@ -2,6 +2,7 @@
 #define _TERMINAL_HPP
 
 #include <iostream>
+#include <sstream>
 
 #include "command.hpp"
 

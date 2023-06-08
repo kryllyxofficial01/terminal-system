@@ -10,6 +10,6 @@ int main() {
     while (command != "exit") {
         command = prompt("> ");
 
-        parse_shell_command(command);
+        struct Command cmd = parse_shell_command(command);
     }
 }
