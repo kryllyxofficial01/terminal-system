@@ -4,8 +4,7 @@ A basic terminal with custom shell commands and its own filesystem.
 ### Commands
 **<>** means required, **[]** means optional
 
-1. `help [command]`
-<br>
+`help [command]`
 Returns either a list of all possible commands and a brief description of each of them, or an in-depth explanation of a specific command.
 
 2. `mk -f <filename>` or `mk -d <directory name>`
