@@ -11,7 +11,7 @@ struct Args {
 
 struct Command {
     std::string command;
-    Args args;
+    Args arguments;
 };
 
 #endif

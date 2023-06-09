@@ -6,7 +6,7 @@
 
 #include "command.hpp"
 
-struct Command parse_shell_command(std::string command);
+Command parse_shell_command(std::string command);
 
 std::string prompt(std::string query);
 

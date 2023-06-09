@@ -1,7 +1,7 @@
 #include "terminal.hpp"
 
-struct Command parse_shell_command(std::string command) {
-    struct Command cmd;
+Command parse_shell_command(std::string command) {
+    Command cmd;
 
     size_t args_start_index = command.find_first_of(" ")+1;
 
@@ -16,17 +16,25 @@ struct Command parse_shell_command(std::string command) {
         args.push_back(arg);
     }
 
-    struct Args command_args;
+    Args command_args;
     for (int i = 0; i < args.size(); i++) {
-        if (args.at(i)[0] == '-') {
+        if (args.at(i).substr(0, 2) == "--") {
             command_args.flags.push_back(
                 std::make_pair(
-                    args.at(i).substr(1),
+                    args.at(i).substr(2),
                     args.at(i+1)
                 )
             );
 
             i++;
+        }
+        else if (args.at(i)[0] == '-') {
+            command_args.flags.push_back(
+                std::make_pair(
+                    args.at(i).substr(1),
+                    ""
+                )
+            );
         }
         else {
             command_args.command_args.push_back(args.at(i));
@@ -36,7 +44,7 @@ struct Command parse_shell_command(std::string command) {
     cmd.command = command.substr(
         0, args_start_index-1
     );
-    cmd.args = command_args;
+    cmd.arguments = command_args;
 
     return cmd;
 }
