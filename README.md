@@ -1,7 +1,9 @@
 # terminal-system
 A basic terminal with custom shell commands and its own filesystem.
 
-### Commands
+---
+
+## Commands
 **<>** means required, **[]** means optional
 
 `help [command]`
