@@ -10,9 +10,14 @@ A basic terminal with custom shell commands and its own filesystem.
 <br>
 Returns either a list of all possible commands and a brief description of each of them, or an in-depth explanation of a specific command.
 
-`mk -f <filename>` or `mk -d <directory name>`
+`mkf <path>`
 <br>
-Creates either a file or a directory in the current directory.
+Creates a file in the specified path. If just a name is provided, then the
+location is assumed to be the current directory.
+
+`mkd <path>`
+Creates a directory in the specified path. If just a name is provided, then the
+location is assumed to be the current directory.
 
 `ls [path]`
 <br>

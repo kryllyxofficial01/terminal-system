@@ -50,8 +50,6 @@ Command parse_shell_command(std::string command) {
 void execute_shell_command(Command command) {
     std::string command_path = "src/bin/" + command.name;
 
-
-
     if (std::filesystem::exists(command_path)) {
         system(
             std::string(
