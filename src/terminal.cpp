@@ -48,10 +48,16 @@ Command parse_shell_command(std::string command) {
 }
 
 void execute_shell_command(Command command) {
-    std::string command_path = "./src/bin/" + command.name;
+    std::string command_path = "src/bin/" + command.name;
+
+
 
     if (std::filesystem::exists(command_path)) {
-        system(command_path.c_str());
+        system(
+            std::string(
+                "./" + command_path
+            ).c_str()
+        );
     }
     else {
         printf("\x1b[31mUnknown command: '%s'\x1b[0m\n\n", command.name.c_str());
